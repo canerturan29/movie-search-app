@@ -1,6 +1,7 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 import { useState } from 'react'
+import { Button, Typography } from '@mui/material'
 
 export default function SearchMovie() {
 
@@ -26,9 +27,16 @@ export default function SearchMovie() {
   }
   return (<>
     <form className='form' onSubmit={searchMovies}>
-      <label htmlFor='query' className='label-search'>Movie Name</label>
-      <input value={query} onChange={(e: any) => setQuery(e.target.value)} className="input" type="text" name="query" placeholder='search movie' />
-      <button type='submit' className='btn-search'>Search</button>
+      <Typography variant="h6">
+        Movie Name
+      </Typography>
+      
+
+      <input value={query} onChange={(e: any) => setQuery(e.target.value)} className="input" type="text" name="query" placeholder='...search movie' />
+      <Button type="submit" variant='contained' color="primary">
+        Search
+      </Button>
+      
 
     </form>
     <div className='card-list'>
