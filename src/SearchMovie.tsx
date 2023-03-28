@@ -1,9 +1,12 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 import { useState } from 'react'
-import { Button, Typography } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
+
 
 export default function SearchMovie() {
+
+
 
   const [query, setQuery] = useState<string>("")
   const [movies, setMovies] = useState<string[]>([])
@@ -30,9 +33,9 @@ export default function SearchMovie() {
       <Typography variant="h6">
         Movie Name
       </Typography>
-      
 
-      <input value={query} onChange={(e: any) => setQuery(e.target.value)} className="input" type="text" name="query" placeholder='...search movie' />
+      <TextField id="outlined-search" label="Search Movies..." type="search" value={query} onChange={(e: any) => setQuery(e.target.value)} />
+      {/* <input value={query} onChange={(e: any) => setQuery(e.target.value)} className="input" type="text" name="query" placeholder='...search movie' /> */}
       <Button type="submit" variant='contained' color="primary">
         Search
       </Button>
@@ -47,3 +50,5 @@ export default function SearchMovie() {
   </>
   )
 }
+
+
